@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>윤이 홈페이지 방명록</title>
+    <title>장지윤 | 건축 포트폴리오</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #050a14; color: #cbd5e1; font-family: 'Pretendard', sans-serif; }
@@ -11,27 +11,46 @@
         .blueprint-grid { background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px); background-size: 30px 30px; }
     </style>
 </head>
-<body class="blueprint-grid min-h-screen flex items-center justify-center p-4">
+<body class="blueprint-grid min-h-screen text-slate-200">
 
-    <div class="glass-panel w-full max-w-lg rounded-2xl p-8 shadow-2xl">
-        <header class="text-center mb-8">
-            <h1 class="text-2xl font-bold text-white mb-2">Guestbook</h1>
-            <p class="text-slate-400 text-sm">건축가 장지윤의 공간에 남기는 흔적</p>
-        </header>
+    <!-- 상단 내비게이션 -->
+    <nav class="p-6 flex justify-between items-center border-b border-slate-800">
+        <h2 class="text-xl font-bold tracking-tighter">JIYUN JANG <span class="text-blue-500">ARCHITECT</span></h2>
+        <div class="space-x-6 text-sm text-slate-400">
+            <a href="#" class="hover:text-blue-400">PROJECTS</a>
+            <a href="#" class="hover:text-blue-400">ABOUT</a>
+            <a href="#" class="hover:text-blue-400">GUESTBOOK</a>
+        </div>
+    </nav>
 
-        <div id="messageList" class="space-y-4 mb-6 h-64 overflow-y-auto pr-2">
-            <div class="bg-slate-800/50 p-4 rounded-xl border-l-4 border-blue-500">
-                <p class="text-xs text-blue-400 font-bold uppercase mb-1">Jiyun Jang</p>
-                <p class="text-sm text-slate-200">방명록에 첫 발자국을 남겨주세요!</p>
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="max-w-5xl mx-auto p-6 md:p-12">
+        <section class="mb-20">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Space & <br><span class="text-blue-500">Structure</span></h1>
+            <p class="text-slate-400 max-w-xl text-lg">건축가 장지윤의 포트폴리오입니다. 공간의 본질을 탐구하고, 구조와 형태의 균형을 찾습니다.</p>
+        </section>
+
+        <!-- 방명록 섹션 -->
+        <section id="guestbook" class="glass-panel w-full max-w-xl rounded-2xl p-8 shadow-2xl mx-auto">
+            <header class="text-center mb-8">
+                <h1 class="text-2xl font-bold text-white mb-2">Guestbook</h1>
+                <p class="text-slate-400 text-sm">소중한 흔적을 남겨주세요.</p>
+            </header>
+
+            <div id="messageList" class="space-y-4 mb-6 h-64 overflow-y-auto pr-2">
+                <div class="bg-slate-800/50 p-4 rounded-xl border-l-4 border-blue-500">
+                    <p class="text-xs text-blue-400 font-bold uppercase mb-1">Jiyun Jang</p>
+                    <p class="text-sm text-slate-200">방명록에 첫 발자국을 남겨주세요!</p>
+                </div>
             </div>
-        </div>
 
-        <div class="space-y-3">
-            <input type="text" id="nameInput" placeholder="닉네임" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none transition-all">
-            <textarea id="messageInput" placeholder="메시지를 입력하세요..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm h-24 focus:ring-2 focus:ring-blue-500 outline-none transition-all"></textarea>
-            <button onclick="addMessage()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-lg shadow-lg shadow-blue-900/20 transition-transform active:scale-95">게시하기</button>
-        </div>
-    </div>
+            <div class="space-y-3">
+                <input type="text" id="nameInput" placeholder="닉네임" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                <textarea id="messageInput" placeholder="메시지를 입력하세요..." class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm h-24 focus:ring-2 focus:ring-blue-500 outline-none transition-all"></textarea>
+                <button onclick="addMessage()" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-lg shadow-lg shadow-blue-900/20 transition-transform active:scale-95">게시하기</button>
+            </div>
+        </section>
+    </main>
 
     <script>
         function addMessage() {
