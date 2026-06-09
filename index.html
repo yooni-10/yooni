@@ -121,7 +121,7 @@
         <a href="#blueprint" class="mobile-link py-2 border-b border-archGray-100 dark:border-archGray-900">Sandbox (블루프린트)</a>
         <a href="#process" class="mobile-link py-2 border-b border-archGray-100 dark:border-archGray-900">Process</a>
         <a href="#estimator" class="mobile-link py-2 border-b border-archGray-100 dark:border-archGray-900">Estimator (견적산출)</a>
-        <a href="#guestbook" class="mobile-link py-2 border-b border-archGray-100 dark:border-archGray-900 font-semibold text-cyan-600">Guestbook (방명록)</a>
+        <a href="#guestbook" class="mobile-link py-2 border-b border-archGray-100 dark:border-archGray-900 font-semibold text-cyan-600">Guestbook (패들릿 방명록)</a>
         <a href="#contact" class="mobile-link py-2 border-b border-archGray-100 dark:border-archGray-900">Contact</a>
     </div>
 </header>
@@ -685,87 +685,45 @@
     <div class="max-w-7xl mx-auto px-6">
         
         <!-- Header -->
-        <div class="text-center mb-16">
-            <span class="text-xs font-bold tracking-[0.4em] text-cyan-600 dark:text-cyan-400 uppercase">Visitor Diary</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-light mt-2 text-archGray-900 dark:text-white">방명록 및 소통 공간</h2>
+        <div class="text-center mb-10">
+            <span class="text-xs font-bold tracking-[0.4em] text-cyan-600 dark:text-cyan-400 uppercase">Interactive Guestbook</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-light mt-2 text-archGray-900 dark:text-white">장지윤의 패들릿 방명록</h2>
             <p class="text-sm text-archGray-500 dark:text-archGray-400 mt-3 max-w-xl mx-auto font-light">
-                장지윤 건축가에게 전하고 싶은 메시지, 인상 깊었던 프로젝트에 대한 의견, 혹은 간단한 인사말을 자유롭게 남겨주세요.
+                건축가 장지윤에게 인상 깊었던 피드백, 자유로운 영감, 혹은 소소한 방명록 낙서를 남겨보세요. 패들릿 보드에서 메모지에 글을 써서 아름답게 남겨둘 수 있습니다.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            <!-- Left Side: Message Form -->
-            <div class="lg:col-span-5 bg-archGray-50 dark:bg-archGray-950 p-8 rounded-lg border border-archGray-200 dark:border-archGray-800">
-                <h3 class="font-serif text-lg font-light text-archGray-900 dark:text-white mb-6 flex items-center gap-2">
-                    <i class="fa-regular fa-comment-dots text-cyan-500"></i> 새 메시지 작성
-                </h3>
-                <form id="guestbookForm" class="space-y-4">
-                    <div>
-                        <label class="block text-[11px] uppercase tracking-wider font-semibold text-archGray-500 mb-1.5">이름 (닉네임)</label>
-                        <input type="text" id="gbName" required placeholder="예: 미래의 건축주" class="w-full bg-white dark:bg-archGray-900 border border-archGray-300 dark:border-archGray-800 rounded p-3 text-xs focus:ring-1 focus:ring-cyan-500 focus:outline-none transition">
-                    </div>
-                    
-                    <!-- Architectural Icon Selector -->
-                    <div>
-                        <label class="block text-[11px] uppercase tracking-wider font-semibold text-archGray-500 mb-1.5">프로필 테마 심볼</label>
-                        <div class="grid grid-cols-4 gap-2" id="gbSymbolContainer">
-                            <label class="symbol-option flex flex-col items-center justify-center p-2 bg-white dark:bg-archGray-900 border border-archGray-300 dark:border-archGray-800 rounded cursor-pointer hover:border-cyan-500 transition text-center">
-                                <input type="radio" name="gbSymbol" value="fa-compass-drafting" checked class="sr-only">
-                                <i class="fa-solid fa-compass-drafting text-cyan-500 text-lg"></i>
-                                <span class="text-[9px] text-archGray-400 mt-1">컴퍼스</span>
-                            </label>
-                            <label class="symbol-option flex flex-col items-center justify-center p-2 bg-white dark:bg-archGray-900 border border-archGray-300 dark:border-archGray-800 rounded cursor-pointer hover:border-cyan-500 transition text-center">
-                                <input type="radio" name="gbSymbol" value="fa-pencil" class="sr-only">
-                                <i class="fa-solid fa-pencil text-yellow-600 text-lg"></i>
-                                <span class="text-[9px] text-archGray-400 mt-1">연필</span>
-                            </label>
-                            <label class="symbol-option flex flex-col items-center justify-center p-2 bg-white dark:bg-archGray-900 border border-archGray-300 dark:border-archGray-800 rounded cursor-pointer hover:border-cyan-500 transition text-center">
-                                <input type="radio" name="gbSymbol" value="fa-building" class="sr-only">
-                                <i class="fa-solid fa-building text-blue-500 text-lg"></i>
-                                <span class="text-[9px] text-archGray-400 mt-1">매스</span>
-                            </label>
-                            <label class="symbol-option flex flex-col items-center justify-center p-2 bg-white dark:bg-archGray-900 border border-archGray-300 dark:border-archGray-800 rounded cursor-pointer hover:border-cyan-500 transition text-center">
-                                <input type="radio" name="gbSymbol" value="fa-lightbulb" class="sr-only">
-                                <i class="fa-solid fa-lightbulb text-amber-500 text-lg"></i>
-                                <span class="text-[9px] text-archGray-400 mt-1">아이디어</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-[11px] uppercase tracking-wider font-semibold text-archGray-500 mb-1.5">내용</label>
-                        <textarea id="gbMessage" rows="4" required placeholder="STUDIO AETERNA의 작품을 감상한 느낌이나 응원의 말씀을 자유롭게 남겨보세요." class="w-full bg-white dark:bg-archGray-900 border border-archGray-300 dark:border-archGray-800 rounded p-3 text-xs focus:ring-1 focus:ring-cyan-500 focus:outline-none transition"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full py-3 bg-archGray-900 text-white dark:bg-cyan-500 dark:text-black hover:bg-archGray-800 dark:hover:bg-cyan-400 transition-all font-semibold text-xs tracking-widest uppercase rounded flex items-center justify-center gap-2">
-                        <span>방명록 남기기</span>
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </form>
+        <!-- Padlet Embed Device Container -->
+        <div class="max-w-6xl mx-auto bg-archGray-100 dark:bg-archGray-950 p-4 sm:p-6 rounded-xl shadow-2xl border border-archGray-200 dark:border-archGray-800">
+            <!-- Utility Actions bar -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4 pb-4 border-b border-archGray-200 dark:border-archGray-800 text-xs">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse"></span>
+                    <span class="text-archGray-600 dark:text-archGray-300 font-medium">COLLABORATIVE BOARD CONNECTED</span>
+                </div>
+                <!-- Premium External link button -->
+                <a href="https://padlet.com/jiyunhappy0196/padlet-yw52aoi04kg442zh" target="_blank" class="px-4 py-2 bg-archGray-900 text-white dark:bg-cyan-500 dark:text-black hover:bg-archGray-800 dark:hover:bg-cyan-400 text-[11px] font-bold uppercase tracking-wider rounded transition flex items-center gap-2 shadow-md">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>새 창으로 패들릿 열기</span>
+                </a>
             </div>
 
-            <!-- Right Side: Message Feed List -->
-            <div class="lg:col-span-7">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-serif text-lg font-light text-archGray-900 dark:text-white flex items-center gap-2">
-                        <i class="fa-solid fa-list-ul text-cyan-500"></i> 방문 메시지 피드 (<span id="gbTotalCount">0</span>)
-                    </h3>
-                    <div class="text-[11px] text-archGray-400 font-mono">
-                        <span class="inline-block w-2.5 h-2.5 rounded-full bg-green-500 mr-1 animate-pulse"></span> LIVE
-                    </div>
-                </div>
-
-                <!-- Feed Container with custom scroll -->
-                <div class="space-y-4 max-h-[500px] overflow-y-auto pr-2" id="guestbookFeed">
-                    <!-- Dynamic message nodes will be rendered here -->
-                    <div class="text-center py-12 border border-dashed border-archGray-300 dark:border-archGray-800 rounded text-archGray-400 text-sm">
-                        <i class="fa-regular fa-folder-open text-2xl mb-2 block"></i>
-                        등록된 방명록이 없습니다. 첫 마디를 남겨 보세요!
-                    </div>
-                </div>
+            <!-- Interactive Responsive Iframe -->
+            <div class="relative w-full overflow-hidden rounded-lg border border-archGray-300 dark:border-archGray-800 bg-white dark:bg-archGray-900 shadow-inner" style="height: 600px;">
+                <iframe 
+                    src="https://padlet.com/embed/yw52aoi04kg442zh" 
+                    frameborder="0" 
+                    allow="camera;microphone;geolocation" 
+                    style="width: 100%; height: 100%; display: block;" 
+                    allowfullscreen>
+                </iframe>
             </div>
 
+            <!-- Footer Tips -->
+            <div class="mt-4 flex flex-col sm:flex-row justify-between items-center text-[11px] text-archGray-400 dark:text-archGray-500 gap-2">
+                <span><i class="fa-solid fa-circle-question mr-1 text-cyan-500"></i> 패들릿 화면 우측 하단의 <span class="font-bold text-cyan-500 text-xs">+</span> 버튼을 누르면 새로운 쪽지를 부착할 수 있습니다.</span>
+                <span class="font-mono">ID: yw52aoi04kg442zh</span>
+            </div>
         </div>
 
     </div>
@@ -1018,164 +976,6 @@
 
     </div>
 </div>
-
-<!-- Firebase System Config JS Module -->
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-    import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-    import { getFirestore, collection, doc, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-    // Global variables for guestbook list
-    window.guestbookMessages = [];
-    
-    // Fallback Mock Local Data in case Firebase is not connected
-    const fallbackMessages = [
-        { name: "건축마니아", symbol: "fa-compass-drafting", message: "양평 콘크리트 오아시스는 정말 예술이네요. 나선형 대지를 이렇게 소화하다니 감명 받았습니다.", timestamp: Date.now() - 3600000 * 4 },
-        { name: "김민혁 대표", symbol: "fa-building", message: "장지윤 소장님의 미래 지속 가능한 패시브 설계 철학에 전적으로 공감합니다. 조만간 사옥 설계 건으로 정식 의뢰 드릴 예정입니다.", timestamp: Date.now() - 3600000 * 24 },
-        { name: "대학원생 J", symbol: "fa-pencil", message: "포트폴리오 구성이 정말 세련되고 직관적입니다. 특히 도면을 간단히 구성해 볼 수 있는 샌드박스가 참 신선해요!", timestamp: Date.now() - 3600000 * 48 }
-    ];
-
-    let db;
-    let auth;
-    let guestbookCol;
-
-    // --- STREAMING_CHUNK: Initializing Firebase Connection... ---
-    async function initFirebaseAndGuestbook() {
-        // Checking for pre-provided workspace config variables safely
-        const hasFirebaseConfig = typeof __firebase_config !== 'undefined';
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-aeterna-id';
-
-        if (hasFirebaseConfig) {
-            try {
-                const firebaseConfig = JSON.parse(__firebase_config);
-                const app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
-
-                // Wait for custom authentication token or fallback anonymously
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
-                }
-
-                // Strictly structured Path according to Rule 1: /artifacts/{appId}/public/data/{collectionName}
-                guestbookCol = collection(db, 'artifacts', appId, 'public', 'data', 'guestbook');
-                
-                // Read & Listen to Guestbook dynamically
-                onSnapshot(guestbookCol, (snapshot) => {
-                    const loaded = [];
-                    snapshot.forEach(doc => {
-                        loaded.push({ id: doc.id, ...doc.data() });
-                    });
-                    
-                    // Rule 2 Check: Sorting in JS memory directly rather than using orderby inside Firebase queries
-                    loaded.sort((a, b) => b.timestamp - a.timestamp);
-                    window.guestbookMessages = loaded;
-                    renderGuestbookFeed();
-                }, (err) => {
-                    console.error("Firestore onSnapshot Error:", err);
-                    loadFallbackData();
-                });
-
-            } catch (error) {
-                console.error("Firebase startup sequence failed, fallback loaded:", error);
-                loadFallbackData();
-            }
-        } else {
-            // Static Environment Sandbox Fallback setup
-            loadFallbackData();
-        }
-    }
-
-    function loadFallbackData() {
-        window.guestbookMessages = [...fallbackMessages];
-        renderGuestbookFeed();
-    }
-
-    // Function to draw Guestbook elements inside DOM
-    function renderGuestbookFeed() {
-        const feedContainer = document.getElementById('guestbookFeed');
-        const countSpan = document.getElementById('gbTotalCount');
-        
-        countSpan.textContent = window.guestbookMessages.length;
-
-        if (window.guestbookMessages.length === 0) {
-            feedContainer.innerHTML = `
-                <div class="text-center py-12 border border-dashed border-archGray-300 dark:border-archGray-800 rounded text-archGray-400 text-sm">
-                    <i class="fa-regular fa-folder-open text-2xl mb-2 block"></i>
-                    등록된 방명록이 없습니다. 첫 마디를 남겨 보세요!
-                </div>`;
-            return;
-        }
-
-        feedContainer.innerHTML = window.guestbookMessages.map(msg => {
-            const dateStr = new Date(msg.timestamp).toLocaleString('ko-KR', {
-                year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'
-            });
-            // Safe string sanitization
-            const cleanName = msg.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            const cleanMsg = msg.message.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            const symbolClass = msg.symbol || "fa-compass-drafting";
-
-            return `
-                <div class="p-5 border border-archGray-200 dark:border-archGray-800 rounded bg-archGray-50/60 dark:bg-archGray-950/30 flex items-start gap-4 hover:border-cyan-500/50 transition">
-                    <div class="w-10 h-10 rounded bg-white dark:bg-archGray-900 border border-archGray-200 dark:border-archGray-800 flex items-center justify-center text-lg flex-shrink-0">
-                        <i class="fa-solid ${symbolClass} text-cyan-500"></i>
-                    </div>
-                    <div class="flex-1 space-y-1">
-                        <div class="flex items-center justify-between">
-                            <span class="font-bold text-sm text-archGray-900 dark:text-white">${cleanName}</span>
-                            <span class="text-[10px] font-mono text-archGray-400">${dateStr}</span>
-                        </div>
-                        <p class="text-xs text-archGray-600 dark:text-archGray-400 leading-relaxed font-light whitespace-pre-line">${cleanMsg}</p>
-                    </div>
-                </div>`;
-        }).join('');
-    }
-
-    // --- STREAMING_CHUNK: Processing Guestbook submission... ---
-    // Handle Guestbook Form submission
-    const gbForm = document.getElementById('guestbookForm');
-    gbForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const nameInput = document.getElementById('gbName');
-        const msgInput = document.getElementById('gbMessage');
-        const selectedSymbol = document.querySelector('input[name="gbSymbol"]:checked').value;
-
-        const newMsgPayload = {
-            name: nameInput.value.trim(),
-            symbol: selectedSymbol,
-            message: msgInput.value.trim(),
-            timestamp: Date.now()
-        };
-
-        if (guestbookCol) {
-            try {
-                // Rule 3 Check: Write to DB only if authenticated and setDoc / addDoc is allowed
-                await addDoc(guestbookCol, newMsgPayload);
-            } catch (err) {
-                console.error("Firestore Save Error, adding locally:", err);
-                window.guestbookMessages.unshift(newMsgPayload);
-                renderGuestbookFeed();
-            }
-        } else {
-            // Sandbox Local Fallback Mode insertion
-            window.guestbookMessages.unshift(newMsgPayload);
-            renderGuestbookFeed();
-        }
-
-        // Clean form outputs
-        msgInput.value = '';
-        nameInput.value = '';
-    });
-
-    // Start Firebase trigger sequence
-    window.onload = function() {
-        initFirebaseAndGuestbook();
-    };
-</script>
 
 <script>
     // --- Dark/Light Mode Management ---
